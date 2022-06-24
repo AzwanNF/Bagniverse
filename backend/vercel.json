@@ -2,5 +2,19 @@
   "version": 2,
   "name": "bagniverse-backend",
   "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
+  "routes": [{ "src": "/(.*)", "dest": "/server.js" }],
+
+  "headers": {
+    "source": "/(.*)",
+    "headers": [
+      {
+        "key": "AccesAccess-Control-Allow-Origin",
+        "value": "*"
+      },
+      {
+        "key": "Access-Control-Allow-Methods",
+        "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+      }
+    ]
+  }
 }
