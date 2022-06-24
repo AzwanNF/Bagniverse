@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
-import axios from 'axios';
+import axios from '../axios';
 
 const reducer = (state, action) => {
   switch (action.type) {

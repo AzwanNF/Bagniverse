@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import Axios from '../axios';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
