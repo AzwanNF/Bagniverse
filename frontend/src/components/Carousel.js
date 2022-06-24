@@ -12,7 +12,7 @@ class carousel extends React.Component {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h5>First slide label new</h5>
+            <h5>First slide label</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
