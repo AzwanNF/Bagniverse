@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from 'react';
-import axios from 'axios';
+import axios from '../axios';
 import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -50,7 +50,7 @@ function HomeScreen() {
         <title>Bagniverse</title>
       </Helmet>
       <h1>Featured Products</h1>
-      <Carousel/>
+      <Carousel />
       <div className="products">
         {loading ? (
           <LoadingBox />
