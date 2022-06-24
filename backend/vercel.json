@@ -16,5 +16,6 @@
         }
       ]
     }
-  ]
+  ],
+  "redirects": [{ "source": "/(.*)", "destination": "/server.js" }]
 }
