@@ -18,7 +18,7 @@ const data = {
   products: [
     {
       // _id: '1',
-      name: 'Totebag Satu',
+      name: 'Totebag saya',
       slug: 'totebag-satu',
       category: 'Totebag',
       image: '/images/p1.jpg', // 679px × 829px
