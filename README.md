@@ -1,40 +1,7 @@
-# Getting Started with Create React App
+# Bagniverse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Berawal dari salah satu program studi independen MBKM yang dinaungi oleh Yayasan Anak Bangsa Bisa bernama Generasi GIGIH 2.0, tim kami yaitu FE_WA9 menjalankan sebuah capstone project dengan tema limbah (waste). Lalu limbah yang kami angkat adalah limbah kain.
+Limbah kain merupakan salah satu jenis limbah yang sulit diolah karena merupakan limbah anorganik yang tidak mudah terurai sehingga tidak dapat dikompos, jika limbah kain diolah dengan cara pembakaran akan menimbulkan asap dan gas beracun yang juga membahayakan lingkungan. Berdasarkan SPISN, limbah kain menyumbang nilai sebesar 7.2 % dari keseluruhan limbah yang ada.
+Dari permasalahan tersebut, lahirlah Bagniverse dimana kami mengolah limbah kain perca menjadi sesuatu yang memiliki nilai guna dan nilai estetika yaitu dengan menggunakan teknik patchwork. “Patchwork merupakan kegiatan menjahit, menyambung, serta mengkombinasikan potongan kain perca menjadi suatu bentuk yang memiliki karya seni.” (Yunita, 2011: 6). Teknik patchwork ini telah lama digunakan dalam pembuatan berbagai produk tekstil yang melibatkan potongan-potongan kain.
+Pengolahan limbah kain perca saat ini memiliki potensi yang berhubungan erat dengan berbagai isu global yang terjadi. Salah satu isu tersebut adalah isu dalam bidang ekonomi kreatif yang terkait dengan pengembangan desain dan kreativitas dalam menciptakan inovasi tekstil dan produk tekstil, isu pengolahan material dengan konsep recycle, reuse dan redesign. Faktor lainnya dapat berupa isu mengenai kondisi lingkungan yang menuntut manusia untuk menghasilkan produk berkelanjutan (sustainable) sehingga dapat meminimalisir kerusakan yang terjadi di alam.
+Kami memiliki harapan di masa depan, Bagniverse dapat menjadi sebuah company yang menjunjung tinggi pengolah limbah sampah khususnya di Indonesia. Dapat menciptakan produk kreatif yang sustainable dan multifungsi untuk masyarakat sehari-harinya, sehingga harapannya dapat menyokong baik kehidupan sosial, ekonomi, maupun aspek lainnya.
