@@ -94,10 +94,17 @@ function ProductScreen() {
                 numReviews={product.numReviews}
               ></Rating>
             </ListGroup.Item>
-            <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
+            <ListGroup.Item>Price : Rp.{product.price}</ListGroup.Item>
             <ListGroup.Item>
               Description:
-              <p>{product.description}</p>
+              <ul>
+                {product.description
+                  .split('-')
+                  .filter(Boolean)
+                  .map((text) => (
+                    <li>{text}</li>
+                  ))}
+              </ul>
             </ListGroup.Item>
           </ListGroup>
         </Col>
@@ -108,7 +115,7 @@ function ProductScreen() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>
-                    <Col>${product.price}</Col>
+                    <Col>Rp.{product.price}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>

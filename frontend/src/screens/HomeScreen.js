@@ -49,8 +49,8 @@ function HomeScreen() {
       <Helmet>
         <title>Bagniverse</title>
       </Helmet>
-      <h1>Featured Products</h1>
       <Carousel />
+      <h1 className="text-center">Featured Products</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />

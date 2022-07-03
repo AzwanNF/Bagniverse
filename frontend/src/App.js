@@ -25,6 +25,8 @@ import { getError } from './utils';
 import axios from './axios';
 import SearchBox from './components/SearchBox';
 import SearchScreen from './screens/SearchScreen';
+import { Row, Col } from 'react-bootstrap';
+import About from './screens/AboutScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -53,117 +55,135 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
+      <header>
+        <Navbar bg="dark" variant="dark" expand="lg" className="py-5">
+          <Container>
+            <Col>
+              <SearchBox />
+            </Col>
+
+            <Col
+              xs={5}
+              style={{
+                width: '100%',
+                marginRight: 'unset',
+                display: 'flex',
+                alignContent: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <LinkContainer to="/">
+                <Navbar.Brand>
+                  <img width={100} className="brand" src="/images/Logo.png" />
+                </Navbar.Brand>
+              </LinkContainer>
+            </Col>
+
+            <Col>
+              <Nav className="me-auto   justify-content-end">
+                <Link to="/cart" className="nav-link">
+                  Cart
+                  {cart.cartItems.length > 0 && (
+                    <Badge pill bg="danger">
+                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                    </Badge>
+                  )}
+                </Link>
+                {userInfo ? (
+                  <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                    <LinkContainer to="/profile">
+                      <NavDropdown.Item>User Profile</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/orderhistory">
+                      <NavDropdown.Item>Order History</NavDropdown.Item>
+                    </LinkContainer>
+                    <NavDropdown.Divider />
+                    <Link
+                      className="dropdown-item"
+                      to="#signout"
+                      onClick={signoutHandler}
+                    >
+                      Sign Out
+                    </Link>
+                  </NavDropdown>
+                ) : (
+                  <Link className="nav-link" to="/signin">
+                    Sign In
+                  </Link>
+                )}
+              </Nav>
+            </Col>
+          </Container>
+        </Navbar>
+      </header>
       <div
         className={
           sidebarIsOpen
-            ? 'd-flex flex-column site-container active-cont'
-            : 'd-flex flex-column site-container'
+            ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column'
+            : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
         }
-      >
-        <ToastContainer position="bottom-center" limit={1} />
-        <header>
-          <Navbar bg="dark" variant="dark" expand="lg" className="py-5">
-            <Container>
-              <Button
-                variant="dark"
-                onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
-              >
-                <i className="fas fa-bars"></i>
-              </Button>
+      ></div>
+      <main>
+        <Container className="mt-3">
+          <Routes>
+            <Route path="/product/:slug" element={<ProductScreen />} />
+            <Route path="/cart" element={<CartScreen />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/search" element={<SearchScreen />} />
+            <Route path="/signin" element={<SigninScreen />} />
+            <Route path="/signup" element={<SignupScreen />} />
+            <Route path="/profile" element={<ProfileScreen />} />
+            <Route path="/placeorder" element={<PlaceOrderScreen />} />
+            <Route path="/order/:id" element={<OrderScreen />}></Route>
+            <Route
+              path="/orderhistory"
+              element={<OrderHistoryScreen />}
+            ></Route>
+            <Route path="/shipping" element={<ShippingAddressScreen />}></Route>
+            <Route path="/payment" element={<PaymentMethodScreen />}></Route>
+            <Route path="/" element={<HomeScreen />} />
+          </Routes>
+        </Container>
+      </main>
+      <footer className="page-footer font-small blue pt-4 text-white bg-dark">
+        <div className="container-fluid text-center text-md-left">
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'row',
+              alignContent: 'center',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <div className="col-md-3 mb-md-0 mb-3">
+              <ul className="list-unstyled">
+                <li>
+                  <a className="custom_link" href="/about">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a className="custom_link" href="#!">
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <hr className="clearfix w-100 d-md-none pb-0" />
 
-              <LinkContainer to="/">
-                <Navbar.Brand>BAGNIVERSE</Navbar.Brand>
-              </LinkContainer>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <SearchBox />
-                <Nav className="me-auto  w-100  justify-content-end">
-                  <Link to="/cart" className="nav-link">
-                    Cart
-                    {cart.cartItems.length > 0 && (
-                      <Badge pill bg="danger">
-                        {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-                      </Badge>
-                    )}
-                  </Link>
-                  {userInfo ? (
-                    <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                      <LinkContainer to="/profile">
-                        <NavDropdown.Item>User Profile</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/orderhistory">
-                        <NavDropdown.Item>Order History</NavDropdown.Item>
-                      </LinkContainer>
-                      <NavDropdown.Divider />
-                      <Link
-                        className="dropdown-item"
-                        to="#signout"
-                        onClick={signoutHandler}
-                      >
-                        Sign Out
-                      </Link>
-                    </NavDropdown>
-                  ) : (
-                    <Link className="nav-link" to="/signin">
-                      Sign In
-                    </Link>
-                  )}
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </header>
-        <div
-          className={
-            sidebarIsOpen
-              ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column'
-              : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
-          }
-        >
-          <Nav className="flex-column text-white w-100 p-2">
-            <Nav.Item>
-              <strong>Categories</strong>
-            </Nav.Item>
-            {categories.map((category) => (
-              <Nav.Item key={category}>
-                <LinkContainer
-                  to={`/search?category=${category}`}
-                  onClick={() => setSidebarIsOpen(false)}
-                >
-                  <Nav.Link>{category}</Nav.Link>
-                </LinkContainer>
-              </Nav.Item>
-            ))}
-          </Nav>
+            <div className="col-md-2 mt-md-0 mt-3">
+              <img width={100} src="/images/Logo.png" />
+            </div>
+          </div>
         </div>
-        <main>
-          <Container className="mt-3">
-            <Routes>
-              <Route path="/product/:slug" element={<ProductScreen />} />
-              <Route path="/cart" element={<CartScreen />} />
-              <Route path="/search" element={<SearchScreen />} />
-              <Route path="/signin" element={<SigninScreen />} />
-              <Route path="/signup" element={<SignupScreen />} />
-              <Route path="/profile" element={<ProfileScreen />} />
-              <Route path="/placeorder" element={<PlaceOrderScreen />} />
-              <Route path="/order/:id" element={<OrderScreen />}></Route>
-              <Route
-                path="/orderhistory"
-                element={<OrderHistoryScreen />}
-              ></Route>
-              <Route
-                path="/shipping"
-                element={<ShippingAddressScreen />}
-              ></Route>
-              <Route path="/payment" element={<PaymentMethodScreen />}></Route>
-              <Route path="/" element={<HomeScreen />} />
-            </Routes>
-          </Container>
-        </main>
-        <footer bg="dark" variant="dark" expand="lg" className="py-5">
-          <div className="text-center">All rights reserved</div>
-        </footer>
-      </div>
+
+        <div className="footer-copyright text-center py-3">
+          © 2020 Copyright:
+          <a href="#"> Bagniverse</a>
+        </div>
+      </footer>
     </BrowserRouter>
   );
 }
