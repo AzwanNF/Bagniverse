@@ -12,6 +12,13 @@ class carousel extends React.Component {
             alt="First slide"
           />
         </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="images/banner.png"
+            alt="First slide"
+          />
+        </Carousel.Item>
       </Carousel>
     );
   }

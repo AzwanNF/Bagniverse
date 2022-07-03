@@ -75,7 +75,7 @@ function App() {
             >
               <LinkContainer to="/">
                 <Navbar.Brand>
-                  <img width={100} src="images/logo.png" />
+                  <img width={200} src="images/logonav.png" alt="logo" />
                 </Navbar.Brand>
               </LinkContainer>
             </Col>
@@ -181,7 +181,7 @@ function App() {
             <div className="col-md-2 mt-md-0 mt-3">
               <LinkContainer to="/">
                 <Navbar.Brand>
-                  <img width={100} src="images/logo.png" />
+                  <img width={100} src="images/logo.png" alt="logo" />
                 </Navbar.Brand>
               </LinkContainer>
             </div>
