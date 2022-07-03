@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class carousel extends React.Component {
   render() {
     return (
-      <Carousel variant="light">
+      <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"

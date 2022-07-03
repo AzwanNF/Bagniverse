@@ -27,6 +27,7 @@ import SearchBox from './components/SearchBox';
 import SearchScreen from './screens/SearchScreen';
 import { Row, Col } from 'react-bootstrap';
 import About from './screens/AboutScreen';
+import Stack from 'react-bootstrap/Stack';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -56,7 +57,7 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        <Navbar bg="dark" variant="dark" expand="lg" className="py-5">
+        <Navbar variant="dark" expand="lg" className="py-4">
           <Container>
             <Col>
               <SearchBox />
@@ -74,23 +75,27 @@ function App() {
             >
               <LinkContainer to="/">
                 <Navbar.Brand>
-                  <img width={100} className="brand" src="/images/Logo.png" />
+                  <img width={100} src="/images/LOGO.png" />
                 </Navbar.Brand>
               </LinkContainer>
             </Col>
 
             <Col>
-              <Nav className="me-auto   justify-content-end">
-                <Link to="/cart" className="nav-link">
+              <Nav className="me-auto justify-content-end">
+                <Link to="/cart" className="nav-link text-dark">
                   Cart
                   {cart.cartItems.length > 0 && (
-                    <Badge pill bg="danger">
+                    <Badge pill bg="warning">
                       {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                     </Badge>
                   )}
                 </Link>
                 {userInfo ? (
-                  <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                  <NavDropdown
+                    className="rounded-pill"
+                    title={userInfo.name}
+                    id="basic-nav-dropdown"
+                  >
                     <LinkContainer to="/profile">
                       <NavDropdown.Item>User Profile</NavDropdown.Item>
                     </LinkContainer>
@@ -99,7 +104,7 @@ function App() {
                     </LinkContainer>
                     <NavDropdown.Divider />
                     <Link
-                      className="dropdown-item"
+                      className="dropdown-item "
                       to="#signout"
                       onClick={signoutHandler}
                     >
@@ -107,7 +112,7 @@ function App() {
                     </Link>
                   </NavDropdown>
                 ) : (
-                  <Link className="nav-link" to="/signin">
+                  <Link className="nav-link text-dark" to="/signin">
                     Sign In
                   </Link>
                 )}
@@ -145,7 +150,7 @@ function App() {
           </Routes>
         </Container>
       </main>
-      <footer className="page-footer font-small blue pt-4 text-white bg-dark">
+      <footer className="page-footer font-small blue pt-3 text-white bg-dark">
         <div className="container-fluid text-center text-md-left">
           <div
             style={{
@@ -158,30 +163,33 @@ function App() {
             }}
           >
             <div className="col-md-3 mb-md-0 mb-3">
-              <ul className="list-unstyled">
-                <li>
+              <Stack gap={3}>
+                <div className="">
                   <a className="custom_link" href="/about">
                     About
                   </a>
-                </li>
-                <li>
-                  <a className="custom_link" href="#!">
+                </div>
+                <div className="">
+                  <a className="custom_link " href="#!">
                     FAQ
                   </a>
-                </li>
-              </ul>
+                </div>
+              </Stack>
             </div>
             <hr className="clearfix w-100 d-md-none pb-0" />
 
             <div className="col-md-2 mt-md-0 mt-3">
-              <img width={100} src="/images/Logo.png" />
+              <LinkContainer to="/">
+                <Navbar.Brand>
+                  <img width={100} src="/images/LOGO.png" />
+                </Navbar.Brand>
+              </LinkContainer>
             </div>
           </div>
         </div>
 
         <div className="footer-copyright text-center py-3">
-          © 2020 Copyright:
-          <a href="#"> Bagniverse</a>
+          © 2022 Copyright : Bagniverse
         </div>
       </footer>
     </BrowserRouter>

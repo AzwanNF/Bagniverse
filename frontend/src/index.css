@@ -1,10 +1,13 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    116.57deg,
+    #a96f07 24.59%,
+    rgba(0, 0, 0, 0.87) 114.75%
+  );
 }
 .site-container {
   min-height: 100vh;
@@ -14,7 +17,8 @@ main {
 }
 .btn-primary,
 .btn-outline-primary {
-  background-color: #f0c040;
+  background: rgba(6, 51, 210, 0.82);
+  border-radius: 10px;
   color: #000000;
 }
 .products {
@@ -76,6 +80,9 @@ main {
 /* navbar */
 .navbar {
   position: relative;
+  background: #ffffff66;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .Brand {
   position: absolute;
@@ -88,6 +95,4 @@ main {
   min-width: auto;
 }
 
-.navbar {
-  position: relative;
-}
+

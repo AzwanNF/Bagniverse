@@ -36,16 +36,16 @@ const reducer = (state, action) => {
 
 const prices = [
   {
-    name: '$1 to $50',
-    value: '1-50',
+    name: 'Rp.10000 to Rp.20000',
+    value: '10000-20000',
   },
   {
-    name: '$51 to $200',
-    value: '51-200',
+    name: 'Rp.21000 to Rp.300000',
+    value: '21000-30000',
   },
   {
-    name: '$201 to $1000',
-    value: '201-1000',
+    name: 'Rp.31000 to Rp.50000',
+    value: '31000-50000',
   },
 ];
 
@@ -134,29 +134,6 @@ export default function SearchScreen() {
       </Helmet>
       <Row>
         <Col md={3}>
-          <h3>Department</h3>
-          <div>
-            <ul>
-              <li>
-                <Link
-                  className={'all' === category ? 'text-bold' : ''}
-                  to={getFilterUrl({ category: 'all' })}
-                >
-                  Any
-                </Link>
-              </li>
-              {categories.map((c) => (
-                <li key={c}>
-                  <Link
-                    className={c === category ? 'text-bold' : ''}
-                    to={getFilterUrl({ category: c })}
-                  >
-                    {c}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
           <div>
             <h3>Price</h3>
             <ul>
