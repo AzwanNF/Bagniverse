@@ -6,7 +6,7 @@
 - sign up in website
 - cart product
 - place order
-- 
+
 ## Installation
 
 - Clone the project
