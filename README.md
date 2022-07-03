@@ -1,7 +1,33 @@
-# Bagniverse
+## Bagniverse
+  Bagniverse stands for tote BAG uNIVERSE. Project waste can minimize waste, one of which is cloth waste. Totebag can use by all. This Totebag eco friendly because it can use as an alternative plastic bag.
 
-Berawal dari salah satu program studi independen MBKM yang dinaungi oleh Yayasan Anak Bangsa Bisa bernama Generasi GIGIH 2.0, tim kami yaitu FE_WA9 menjalankan sebuah capstone project dengan tema limbah (waste). Lalu limbah yang kami angkat adalah limbah kain.
-Limbah kain merupakan salah satu jenis limbah yang sulit diolah karena merupakan limbah anorganik yang tidak mudah terurai sehingga tidak dapat dikompos, jika limbah kain diolah dengan cara pembakaran akan menimbulkan asap dan gas beracun yang juga membahayakan lingkungan. Berdasarkan SPISN, limbah kain menyumbang nilai sebesar 7.2 % dari keseluruhan limbah yang ada.
-Dari permasalahan tersebut, lahirlah Bagniverse dimana kami mengolah limbah kain perca menjadi sesuatu yang memiliki nilai guna dan nilai estetika yaitu dengan menggunakan teknik patchwork. “Patchwork merupakan kegiatan menjahit, menyambung, serta mengkombinasikan potongan kain perca menjadi suatu bentuk yang memiliki karya seni.” (Yunita, 2011: 6). Teknik patchwork ini telah lama digunakan dalam pembuatan berbagai produk tekstil yang melibatkan potongan-potongan kain.
-Pengolahan limbah kain perca saat ini memiliki potensi yang berhubungan erat dengan berbagai isu global yang terjadi. Salah satu isu tersebut adalah isu dalam bidang ekonomi kreatif yang terkait dengan pengembangan desain dan kreativitas dalam menciptakan inovasi tekstil dan produk tekstil, isu pengolahan material dengan konsep recycle, reuse dan redesign. Faktor lainnya dapat berupa isu mengenai kondisi lingkungan yang menuntut manusia untuk menghasilkan produk berkelanjutan (sustainable) sehingga dapat meminimalisir kerusakan yang terjadi di alam.
-Kami memiliki harapan di masa depan, Bagniverse dapat menjadi sebuah company yang menjunjung tinggi pengolah limbah sampah khususnya di Indonesia. Dapat menciptakan produk kreatif yang sustainable dan multifungsi untuk masyarakat sehari-harinya, sehingga harapannya dapat menyokong baik kehidupan sosial, ekonomi, maupun aspek lainnya.
+## Features
+- login to checkout the item
+- sign up in website
+- cart product
+- place order
+- 
+## Installation
+
+- Clone the project
+  ```bash
+     git clone 
+  ```
+- Go to the project directory
+  ```bash
+     cd bagniverse
+  ```
+- Install dependencies
+  ```bash
+     npm install
+  ```
+  
+- Start the server
+  ```bash
+     npm start
+  ```
+- it will open automatically the `http://localhost:3000` in your browser to see the result
+
+## Testing
+
+Run `npm test` for launches the test runner in the interactive watch mode.
