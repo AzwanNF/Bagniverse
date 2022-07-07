@@ -1,5 +1,5 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -20,12 +20,11 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
-import Button from 'react-bootstrap/Button';
 import { getError } from './utils';
 import axios from './axios';
 import SearchBox from './components/SearchBox';
 import SearchScreen from './screens/SearchScreen';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import About from './screens/AboutScreen';
 import Stack from 'react-bootstrap/Stack';
 
@@ -40,23 +39,9 @@ function App() {
     localStorage.removeItem('paymentMethod');
     window.location.href = '/signin';
   };
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const { data } = await axios.get(`/api/products/categories`);
-        setCategories(data);
-      } catch (err) {
-        toast.error(getError(err));
-      }
-    };
-    fetchCategories();
-  }, []);
   return (
     <BrowserRouter>
-      <header>
+      <header className="mb-5">
         <Navbar variant="dark" expand="lg" className="py-4">
           <Container>
             <Col>
@@ -121,13 +106,6 @@ function App() {
           </Container>
         </Navbar>
       </header>
-      <div
-        className={
-          sidebarIsOpen
-            ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column'
-            : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
-        }
-      ></div>
       <main>
         <Container className="mt-3">
           <Routes>
@@ -150,7 +128,7 @@ function App() {
           </Routes>
         </Container>
       </main>
-      <footer className="page-footer font-small blue pt-3 text-white bg-dark">
+      <footer className="page-footer font-small blue pt-3 mt-5 text-white bg-dark">
         <div className="container-fluid text-center text-md-left">
           <div
             style={{

@@ -3,7 +3,6 @@ import { Store } from '../Store';
 import { Helmet } from 'react-helmet-async';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import MessageBox from '../components/MessageBox';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -41,13 +40,16 @@ export default function CartScreen() {
       <Helmet>
         <title>Shopping Cart</title>
       </Helmet>
-      <h1>Shopping Cart</h1>
+      <h1 className="text-light text-center p-2">Shopping Cart</h1>
       <Row>
         <Col md={8}>
           {cartItems.length === 0 ? (
-            <MessageBox>
-              Cart is empty. <Link to="/">Go Shopping</Link>
-            </MessageBox>
+            <div>
+              <p className="text-light">Cart is empty</p>
+              <Button variant="light" className="btn-buy">
+                <Link to="/">buy now</Link>
+              </Button>
+            </div>
           ) : (
             <ListGroup>
               {cartItems.map((item) => (
@@ -112,9 +114,10 @@ export default function CartScreen() {
                   <div className="d-grid">
                     <Button
                       type="button"
-                      variant="primary"
+                      variant="dark"
                       onClick={checkoutHandler}
                       disabled={cartItems.length === 0}
+                      className="btn-buy"
                     >
                       Proceed to Checkout
                     </Button>

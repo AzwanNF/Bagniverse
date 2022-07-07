@@ -6,7 +6,7 @@ import axios from '../axios';
 import { useContext } from 'react';
 import { Store } from '../Store';
 
-function Product(props) {
+function Product(props: any) {
   const { product } = props;
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -14,8 +14,8 @@ function Product(props) {
     cart: { cartItems },
   } = state;
 
-  const addToCartHandler = async (item) => {
-    const existItem = cartItems.find((x) => x._id === product._id);
+  const addToCartHandler = async (item: any) => {
+    const existItem = cartItems.find((x : any) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {

@@ -16,7 +16,7 @@ class carousel extends React.Component {
           <img
             className="d-block w-100"
             src="images/banner.png"
-            alt="First slide"
+            alt="second slide"
           />
         </Carousel.Item>
       </Carousel>
