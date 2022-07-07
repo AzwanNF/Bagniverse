@@ -26,7 +26,7 @@ const AboutScreen = () => {
           </div>
         </div>
         <div className="p-2">
-          <img width={500} src="images/banner.png" />
+          <img width={500} src="images/banner.png" alt="Banner"/>
         </div>
       </div>
       <div className="vision p-5">
